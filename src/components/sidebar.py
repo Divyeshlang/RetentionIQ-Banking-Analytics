@@ -36,18 +36,15 @@ def _render_nav_item(label: str, page_key: str, icon: str, badge: str = None) ->
 
 def render_sidebar(df: pd.DataFrame) -> dict:
     """
-    Renders the Northstar Enterprise Bank sidebar navigation:
-    - Fixed 320-345px desktop width, full viewport height, white background, subtle border
+    Renders the European Bank sidebar navigation:
+    - Clean desktop width, full viewport height, white background, subtle border
     - Standardized reusable _render_nav_item component across all cards
-    - Strict Flexbox alignment without absolute offsets, negative margins, or manual translate
+    - Strict Flexbox alignment and left-aligned text with outline icons
     - WORKSPACE:
         - Overview
-        - Customers (with independently positioned top-right badge)
+        - Customers (with 10k badge)
         - Insights
         - Risk Studio
-    - MANAGE:
-        - Model Health
-        - Settings
     """
     total_cust = len(df)
     badge_label = f"{total_cust // 1000}k" if total_cust >= 1000 else f"{total_cust}"
@@ -56,21 +53,21 @@ def render_sidebar(df: pd.DataFrame) -> dict:
         st.session_state["current_page"] = "Overview"
 
     with st.sidebar:
-        # 1. Branding Header & Workspace Selector
+        # 1. Branding Header & Workspace Selector (European Bank)
         _render_sidebar_html("""
 <div class="sb-brand">
     <div class="sb-brand-mark">
         <span></span><span></span><span></span><span></span>
     </div>
     <div>
-        <b>northstar</b>
-        <small>EUROPEAN BANK</small>
+        <b>European Bank</b>
+        <small>PORTFOLIO INTELLIGENCE</small>
     </div>
 </div>
 <div class="sb-workspace">
-    <span class="sb-workspace-icon">N</span>
+    <span class="sb-workspace-icon">EB</span>
     <div style="flex:1;">
-        <b>Northstar Europe</b>
+        <b>European Bank</b>
         <small>Enterprise workspace</small>
     </div>
     <span style="color:#909a95; font-size:11px;">⌄</span>
@@ -105,7 +102,7 @@ def render_sidebar(df: pd.DataFrame) -> dict:
         # 3. Enterprise Footer Card
         _render_sidebar_html(f"""
 <div class="sb-help-card">
-    <b>✳ Enterprise Bank Workspace</b>
+    <b>✳ European Bank Workspace</b>
     <p>Database active with <b>{len(df):,}</b> verified customer accounts.</p>
 </div>
 """)

@@ -295,18 +295,18 @@ def apply_custom_theme():
     [data-testid="stSidebar"] {
         background-color: #ffffff !important;
         border-right: 1px solid #e9ede8 !important;
-        min-width: 320px !important;
-        max-width: 345px !important;
+        min-width: 280px !important;
+        max-width: 310px !important;
         padding-top: 0 !important;
     }
 
     [data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
-        padding: 16px 16px 20px 16px !important;
+        padding: 16px 14px 20px 14px !important;
     }
 
-    /* Sidebar vertical block spacing: clean 6px gap */
+    /* Sidebar vertical block spacing: clean 4px gap */
     [data-testid="stSidebar"] div[data-testid="stVerticalBlock"] {
-        gap: 6px !important;
+        gap: 4px !important;
     }
 
     /* Group labels close to items with clear vertical space */
@@ -317,16 +317,11 @@ def apply_custom_theme():
         font-weight: 700 !important;
         color: #8c9691 !important;
         text-transform: uppercase !important;
-        padding: 10px 6px 4px 6px !important;
+        padding: 12px 6px 4px 6px !important;
         margin: 12px 0 6px 0 !important;
         line-height: 1.3 !important;
         font-family: 'Manrope', sans-serif !important;
         box-sizing: border-box !important;
-    }
-
-    .sb-manage-heading {
-        margin-top: 22px !important;
-        padding-top: 10px !important;
     }
 
     /* Target the container of group headings to guarantee non-collapsing margins */
@@ -334,12 +329,7 @@ def apply_custom_theme():
         margin-bottom: 4px !important;
     }
 
-    [data-testid="stSidebar"] div[data-testid="stVerticalBlock"] > div:has(.sb-manage-heading) {
-        margin-top: 16px !important;
-        margin-bottom: 4px !important;
-    }
-
-    /* Sidebar Navigation Buttons - Clean, standardized, non-colliding */
+    /* Sidebar Navigation Buttons - Clean, standardized, fittable */
     [data-testid="stSidebar"] .stButton {
         width: 100% !important;
         margin: 0 !important;
@@ -348,15 +338,15 @@ def apply_custom_theme():
 
     [data-testid="stSidebar"] .stButton>button {
         width: 100% !important;
-        height: 42px !important;
-        min-height: 42px !important;
-        max-height: 42px !important;
+        height: 44px !important;
+        min-height: 44px !important;
+        max-height: 44px !important;
         padding: 0 14px !important;
         border-radius: 9px !important;
         border: 1px solid transparent !important;
         background-color: transparent !important;
         color: #4b5853 !important;
-        font-size: 13px !important;
+        font-size: 13.5px !important;
         font-weight: 500 !important;
         display: flex !important;
         justify-content: flex-start !important;
@@ -368,14 +358,19 @@ def apply_custom_theme():
         line-height: normal !important;
     }
 
+    /* Force text & icons inside buttons to left-align consistently across Streamlit versions */
+    [data-testid="stSidebar"] .stButton>button div,
+    [data-testid="stSidebar"] .stButton>button div[data-testid="stMarkdownContainer"],
     [data-testid="stSidebar"] .stButton>button p {
-        font-size: 13px !important;
+        font-size: 13.5px !important;
         font-weight: 500 !important;
         color: #4b5853 !important;
         margin: 0 !important;
         padding: 0 !important;
         display: flex !important;
+        justify-content: flex-start !important;
         align-items: center !important;
+        text-align: left !important;
         width: 100% !important;
         line-height: normal !important;
     }
@@ -387,7 +382,8 @@ def apply_custom_theme():
         border-color: #e9ede8 !important;
     }
 
-    [data-testid="stSidebar"] .stButton>button:hover p {
+    [data-testid="stSidebar"] .stButton>button:hover p,
+    [data-testid="stSidebar"] .stButton>button:hover div {
         color: #172521 !important;
     }
 
@@ -401,7 +397,9 @@ def apply_custom_theme():
     }
 
     [data-testid="stSidebar"] button[kind="primary"] p,
-    [data-testid="stSidebar"] [data-testid="baseButton-primary"] p {
+    [data-testid="stSidebar"] button[kind="primary"] div,
+    [data-testid="stSidebar"] [data-testid="baseButton-primary"] p,
+    [data-testid="stSidebar"] [data-testid="baseButton-primary"] div {
         color: #087A68 !important;
         font-weight: 600 !important;
     }

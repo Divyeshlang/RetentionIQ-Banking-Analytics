@@ -16,9 +16,9 @@ from src.components.priority_table import render_customers_requiring_attention_p
 from src.components.recommendations import render_strategic_recommendations_page
 from src.components.risk_studio import render_risk_studio_page
 
-# Page Configuration with Northstar styling
+# Page Configuration with European Bank styling
 st.set_page_config(
-    page_title="Northstar | European Bank Intelligence",
+    page_title="European Bank | Customer Intelligence",
     page_icon="✦",
     layout="wide",
     initial_sidebar_state="expanded",
