@@ -53,7 +53,7 @@ def render_sidebar(df: pd.DataFrame) -> dict:
         st.session_state["current_page"] = "Overview"
 
     with st.sidebar:
-        # 1. Branding Header & Workspace Selector (European Bank)
+        # 1. Branding Header (European Bank)
         _render_sidebar_html("""
 <div class="sb-brand">
     <div class="sb-brand-mark">
@@ -63,14 +63,6 @@ def render_sidebar(df: pd.DataFrame) -> dict:
         <b>European Bank</b>
         <small>PORTFOLIO INTELLIGENCE</small>
     </div>
-</div>
-<div class="sb-workspace">
-    <span class="sb-workspace-icon">EB</span>
-    <div style="flex:1;">
-        <b>European Bank</b>
-        <small>Enterprise workspace</small>
-    </div>
-    <span style="color:#909a95; font-size:11px;">⌄</span>
 </div>
 """)
 
