@@ -102,35 +102,7 @@ def render_sidebar(df: pd.DataFrame) -> dict:
             icon="🛡",
         )
 
-        # 3. MANAGE Group
-        st.markdown('<div class="sb-group-heading sb-manage-heading">MANAGE</div>', unsafe_allow_html=True)
-
-        is_health = st.session_state.get("show_model_health", False)
-        health_type = "primary" if is_health else "secondary"
-        if st.button("◈  Model Health", key="sb_btn_model_health_card", type=health_type, use_container_width=True):
-            st.session_state["show_model_health"] = not is_health
-            st.rerun()
-
-        if st.session_state.get("show_model_health", False):
-            _render_sidebar_html("""
-<div class="sb-health-panel">
-    <b>● Model Online</b>
-    <span>L2 Logistic Pipeline AUC: 0.772. Calibration healthy.</span>
-</div>
-""")
-
-        if st.button("⚙  Settings", key="sb_btn_settings_card", type="secondary", use_container_width=True):
-            st.session_state["filter_engagement"] = ["Active", "Inactive"]
-            st.session_state["filter_geo"] = ["France", "Germany", "Spain"]
-            st.session_state["filter_products"] = (int(df["NumOfProducts"].min()), int(df["NumOfProducts"].max()))
-            st.session_state["filter_balance_min"] = 0
-            st.session_state["filter_salary_min"] = 0
-            st.session_state["filter_balance_cutoff"] = int(df["Balance"].quantile(0.75))
-            st.session_state["filter_salary_cutoff"] = int(df["EstimatedSalary"].quantile(0.75))
-            st.toast("Settings restored to defaults", icon="⚙️")
-            st.rerun()
-
-        # 4. Enterprise Footer Card
+        # 3. Enterprise Footer Card
         _render_sidebar_html(f"""
 <div class="sb-help-card">
     <b>✳ Enterprise Bank Workspace</b>
