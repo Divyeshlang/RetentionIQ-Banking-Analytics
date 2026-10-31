@@ -304,9 +304,9 @@ def apply_custom_theme():
         padding: 16px 16px 20px 16px !important;
     }
 
-    /* Sidebar vertical block spacing: compact 4px gap */
+    /* Sidebar vertical block spacing: clean 6px gap */
     [data-testid="stSidebar"] div[data-testid="stVerticalBlock"] {
-        gap: 4px !important;
+        gap: 6px !important;
     }
 
     /* Group labels close to items with clear vertical space */
@@ -317,15 +317,26 @@ def apply_custom_theme():
         font-weight: 700 !important;
         color: #8c9691 !important;
         text-transform: uppercase !important;
-        padding: 14px 6px 6px 6px !important;
-        margin: 0 !important;
+        padding: 10px 6px 4px 6px !important;
+        margin: 12px 0 6px 0 !important;
         line-height: 1.3 !important;
         font-family: 'Manrope', sans-serif !important;
         box-sizing: border-box !important;
     }
 
     .sb-manage-heading {
-        padding-top: 22px !important;
+        margin-top: 22px !important;
+        padding-top: 10px !important;
+    }
+
+    /* Target the container of group headings to guarantee non-collapsing margins */
+    [data-testid="stSidebar"] div[data-testid="stVerticalBlock"] > div:has(.sb-group-heading) {
+        margin-bottom: 4px !important;
+    }
+
+    [data-testid="stSidebar"] div[data-testid="stVerticalBlock"] > div:has(.sb-manage-heading) {
+        margin-top: 16px !important;
+        margin-bottom: 4px !important;
     }
 
     /* Sidebar Navigation Buttons - Clean, standardized, non-colliding */
