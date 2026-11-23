@@ -138,7 +138,6 @@ def render_customers_requiring_attention_page(df: pd.DataFrame):
     st.markdown("<div style='height: 16px;'></div>", unsafe_allow_html=True)
 
     # 3. Interactive Table Controls: Search, Geography filtering, Sorting & Page Size
-    st.markdown('<div class="northstar-panel">', unsafe_allow_html=True)
     st.markdown('<h3 class="northstar-panel-title">Prioritized Customer Directory</h3>', unsafe_allow_html=True)
 
     ctrl_col1, ctrl_col2, ctrl_col3, ctrl_col4 = st.columns([1.5, 1.2, 1.2, 1.0])
@@ -286,5 +285,3 @@ def render_customers_requiring_attention_page(df: pd.DataFrame):
             mime="text/csv",
             use_container_width=True,
         )
-
-    st.markdown('</div>', unsafe_allow_html=True)

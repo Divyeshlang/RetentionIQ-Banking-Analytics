@@ -88,7 +88,6 @@ Estimate customer churn likelihood using financial, demographic, and engagement 
         st.session_state["rs_active"] = "Yes"
 
     # Form card
-    st.markdown('<div class="northstar-panel">', unsafe_allow_html=True)
     st.markdown('<h3 style="font-family:Manrope,sans-serif;font-size:15px;font-weight:700;margin:0 0 16px 0;color:#172521;">Customer Profile Parameters</h3>', unsafe_allow_html=True)
 
     with st.form("risk_studio_form"):
@@ -179,8 +178,6 @@ Estimate customer churn likelihood using financial, demographic, and engagement 
 
             st.markdown('<div style="height:32px;"></div>', unsafe_allow_html=True)
             submitted = st.form_submit_button("⚡ Calculate Risk", use_container_width=True)
-
-    st.markdown('</div>', unsafe_allow_html=True)
 
     # Secondary action bar for Reset
     reset_col1, reset_col2 = st.columns([1, 5])
